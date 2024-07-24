@@ -1,1 +1,0 @@
-window.alert("This is a message from clientScript2.js file");
