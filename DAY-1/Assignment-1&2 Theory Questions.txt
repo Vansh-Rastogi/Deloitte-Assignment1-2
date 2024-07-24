@@ -1,0 +1,44 @@
+Assignment-1
+
+Q1. What are the popup boxes in JavaScript?
+
+A1. JavaScript has three types of popup boxes. It includes alert box, confirm box and prompt box. Alert box is used to give alert on the screen in the form of the popups. The prompt box is used take input from the user. The confirm box is used to verify something.
+
+Q2. What is JavaScript engine for Safari?
+
+A2. JavaScript core webkit.
+
+Q5. What are the key differences between Java and JavaScript?
+
+A5. Java is statically typed. It is an object oriented programming language for building independent platform-independent applications. It is robust. It is secure. We can create distributed applications using java. Multithreading is allowed. It uses more memory.
+
+    JavaScript is a scripting language used for interactive web development. It has a event based approach to concurrency. It does not support multithreading. It uses less memory.
+
+
+Assignment-2
+
+Q1. Is it possible to disable JavaScript in browser?  If yes, How to disable JavaScript in browser?
+
+A1. Yes, we can disable the JavaScript in the browser. We can do this by changing the browser settings or by using browser extensions like NoScript or ScriptSafe.
+
+Q2. What is the difference between undefined and not defined in JavaScript?
+
+A2. When the variable is declared without a value, it is automatically given the value as undefined.
+
+The not defined is usually caused by a typo, or by trying to access a variable that is out of scope.
+
+Q3. Difference between ==  and ===?
+
+A3. "==" is used to compare two values on both sides and then return true or false. It checks equality only after converting both the values to a common type.
+
+    "===" is a strict equality operator, it compares both the value and the type.
+
+Q4. What does the isNaN() function?
+
+A4. It is used to check whether a given value is an illegal number or not. It returns true if the value is a NaN else return false.
+
+Q5. Difference between Client side JavaScript and Server side JavaScript?
+
+A5. In client-side scripting, source code is visible to user. It's main function is to provide the requested output to the end user. It does not provide security for data. No need of the interaction with the server.
+
+    In server-side scripting, source code is not visible to the user because its output of server-side is an HTML page. Primary function is to manipulate and provide access to the respective database as per request. Provides more data security. It is all about interacting with servers.
