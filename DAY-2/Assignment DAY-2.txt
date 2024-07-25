@@ -1,0 +1,15 @@
+Assignment
+----------
+
+Q4. What is BOM?  DOM?   Diff.  between BOM vs DOM?
+
+A4. BOM - Browser Object Model
+    --------------------------
+
+    It is a programming interface JavaScript tool for working with web browsers. It enables access and manipulation of browser window. Mainly focuses on browser-specific functionality. Window object is created automatically. Don't have access to any content of web document directly.
+
+    DOM - Document Object Model
+    ---------------------------
+   
+    It is a hierarchal representation of HTML documents. Defines the structure and properties of elements on a webpage. Mainly focuses on structure of displayed document. When an HTML document gets loaded in browser, then it becomes a document object. Provides direct access control to content of the web document
+
