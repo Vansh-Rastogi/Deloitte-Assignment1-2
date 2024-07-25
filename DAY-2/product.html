@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Product Pricing...</h2>
+    <p>Product Name: <input type="text" id="pname"></p>
+    <p>Unit Price: <input type="number" id="uprice"></p>
+    <p>Quantity: <input type="number" id="qty"></p>
+    <button type="submit" onclick="getPrice()" style="width: fit-content; height: fit-content;">Get Total</button>
+    <p id="p1"></p>
+
+    <script>
+        function getPrice() {
+            let upr = parseInt(document.getElementById("uprice").value);
+            let qt = parseInt(document.getElementById("qty").value);
+            let total = 0;
+            if (qt > 10) {
+                let ans = window.confirm("Do you want to proceed?");
+                if (ans) {
+                    total = ((qt * upr) - ((qt * upr * 10) / 100));
+                    document.getElementById("p1").innerHTML = "Total Amount : " + total;
+                }
+                else {
+                    document.getElementById("p1").innerHTML = "Waiting"
+                }
+            }
+            else if (qt > 20) {
+                let ans = window.confirm("Do you want to proceed?");
+                if (ans) {
+                    total = ((qt * upr) - ((qt * upr * 15) / 100));
+                    document.getElementById("p1").innerHTML = "Total Amount : " + total;
+                }
+                else {
+                    document.getElementById("p1").innerHTML = "Waiting"
+                }
+            }
+            else if (qt > 30) {
+                let ans = window.confirm("Do you want to proceed?");
+                if (ans) {
+                    total = ((qt * upr) - ((qt * upr * 20) / 100));
+                    document.getElementById("p1").innerHTML = "Total Amount : " + total;
+                }
+                else {
+                    document.getElementById("p1").innerHTML = "Waiting"
+                }
+            }
+            else {
+                let ans = window.confirm("Do you want to proceed?");
+                if (ans) {
+                    total = (qt * upr);
+                    document.getElementById("p1").innerHTML = "Total Amount : " + total;
+                }
+                else {
+                    document.getElementById("p1").innerHTML = "Waiting"
+                }
+            }
+        }
+    </script>
+</body>
+</html>
