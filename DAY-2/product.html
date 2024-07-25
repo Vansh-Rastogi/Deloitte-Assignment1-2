@@ -18,7 +18,7 @@
             let upr = parseInt(document.getElementById("uprice").value);
             let qt = parseInt(document.getElementById("qty").value);
             let total = 0;
-            if (qt > 10) {
+            if (qt > 10 && qt <= 20) {
                 let ans = window.confirm("Do you want to proceed?");
                 if (ans) {
                     total = ((qt * upr) - ((qt * upr * 10) / 100));
@@ -28,7 +28,7 @@
                     document.getElementById("p1").innerHTML = "Waiting"
                 }
             }
-            else if (qt > 20) {
+            else if (qt > 20 && qt <= 30) {
                 let ans = window.confirm("Do you want to proceed?");
                 if (ans) {
                     total = ((qt * upr) - ((qt * upr * 15) / 100));
