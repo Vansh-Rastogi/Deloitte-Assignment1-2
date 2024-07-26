@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Meal Calculator...</legend>
+        Enter the meal name: <input type="text" id="meal">
+        <br>
+        <br>
+        Enter the meal price:<input type="number" id="meal_price">
+        <br>
+        <br>
+        <input type="button" value="Calculate Price" onclick="getPrice()">
+        <div id="div1"> </div>
+    </fieldset>
+    <script>
+        var divObj = document.getElementById("div1");
+        var meals = {};
+        function getPrice() {
+            var price = parseInt(document.getElementById("meal_price").value);
+            var str = calculate_price(price);
+            divObj.innerHTML = divObj.innerHTML + str + "<br>";
+        }
+        function calculate_price(price) {
+            var name = document.getElementById("meal").value;
+            let temp = price;
+            var meal_type = document.getElementById("meal").value;
+            var price1 = temp * 10 / 100;
+            console.log(price1);
+            var price2 = temp * 8 / 100;
+            price = price1 + price2 + temp;
+            price = price.toFixed(2);
+            meals.meal_base_cost = temp;
+            meals.tipAmount = 10;
+            meal.taxAmount = 8;
+            meal.amount = price;
+            var str = `Meal: ${name},MealBaseType  : ${meals.meal_base_cost} ,   Tip Amount  :  ${meals.tipAmount}, Tip TaxAmount: ${meal.taxAmount}, Total Amount: ${meal.amount} `;
+            return str;
+        }
+    </script>
+</body>
+</html>
