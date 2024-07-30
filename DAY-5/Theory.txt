@@ -1,0 +1,13 @@
+setInterval()
+-------------
+It calls a function at specified intervals (in milliseconds). It continues calling the function until clearInterval() is called, or the window is closed.
+
+setTimeout()
+------------
+It calls a function after a number of milliseconds. It is executed only once.
+
+Promises
+--------
+The Promise Object represents the completion or failure of an asynchronous operation and its results. It has 3 states, pending, rejected, fulfilled. 
+Promises are used to simplify managing multiple asynchronous operations, preventing callback hell and unmanageable code. They represent future values, associating 
+handlers with eventual success or failure, resembling synchronous methods by postponing value delivery.
