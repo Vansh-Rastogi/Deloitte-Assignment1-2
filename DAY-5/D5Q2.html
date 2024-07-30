@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="width: 50%;">
+        <legend>Friend's Details</legend>
+        <p>Friend's Name : <input type="text" id="fname"></p>
+        <p>Contact Number : <input type="text" id="cnum"></p>
+        <button type="button" onclick="addFriend()" style="width: 80%; height: fit-content; text-align: center;">ADD FRIEND</button> <br>
+        <p id="p1"></p>
+        <button type="button" onclick="getContactNumber()" style="width: 80%; height: fit-content; text-align: center;">GET CONTACT NUMBER</button>
+        <p id="p2"></p>
+    </fieldset>
+    <script>
+        const myData = new Map();
+        function addFriend() {
+            let friendName = document.getElementById("fname").value;
+            let cNumber = document.getElementById("cnum").value;
+            myData.set(friendName, cNumber);
+            document.getElementById("p1").innerHTML = "Friend's details are added";
+        }
+        function getContactNumber() {
+            let friendName = document.getElementById("fname").value;
+            let cNumber = myData.get(friendName);
+            if (cNumber) {
+                document.getElementById("p2").innerHTML = "Friend's Contact Number is " + cNumber;
+            } else {
+                document.getElementById("p2").innerHTML = "No contact number";
+            }
+        }
+    </script>
+</body>
+</html>
