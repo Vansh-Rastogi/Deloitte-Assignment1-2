@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Bank & Investment Details...</legend>
+        <div id="myData" style="width: fit-content; height: fit-content;">
+
+        </div>
+        <button type="button" onclick="getBankData()" style="width: fit-content; height: fit-content;">BANK DETAILS</button>
+        <div id="myData1" style="width: fit-content; height: fit-content;">
+    
+        </div>
+        <button type="button" onclick="getInvestmentData()" style="width: fit-content; height: fit-content;">INVESTMENT DETAILS</button>
+    </fieldset>
+    <script>
+        class BankAccount {
+            AccNumber = 20193;
+            Name = "Vansh";
+            City = "Haridwar";
+            Email = "vansh@email.com";
+            PhoneNumber = "8293687912";
+
+            constructor(AccNumber, Name) {
+                this.AccNumber = AccNumber;
+                this.Name = Name;
+            }
+        }
+        class FDAccount extends BankAccount {
+            FDAmount = 400000;
+            InterestRate = 12;
+            Duration = 60;
+            constructor(AccNumber, Name, FDAmount, InterestRate, Duration) {
+                super(AccNumber, Name);
+                this.FDAmount = FDAmount;
+                this.InterestRate = InterestRate;
+                this.Duration = Duration;
+            }
+        }
+        function getBankData() {
+            let fdAcc = new FDAccount(27839, "John", 500000, 8.5, 36);
+            let bank = new BankAccount();
+            document.getElementById("myData").innerHTML = `Account Number : ${fdAcc.AccNumber}, Name : ${fdAcc.Name}, City : ${bank.City}, Email : ${bank.Email}, Phone Number : ${bank.PhoneNumber}`;
+        }
+        function getInvestmentData() {
+            let fdAcc = new FDAccount(27839, "John", 500000, 8.5, 36);
+            document.getElementById("myData1").innerHTML = `Account Number : ${fdAcc.AccNumber}, Name : ${fdAcc.Name}, FD Amount : ${fdAcc.FDAmount}, Interest Rate : ${fdAcc.InterestRate}, Duration (In Months) : ${fdAcc.Duration}`;
+        }
+    </script>
+</body>
+</html>
