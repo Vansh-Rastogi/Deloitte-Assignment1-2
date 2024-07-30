@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Users Data...</legend>
+        <input type="button" onclick="showUser()" value="SHOW USER" style="width: fit-content; height: fit-content;"> <br>
+        <input type="text" id="getID" placeholder="Enter a User ID">
+        <input type="button" onclick="removeUser()" value="REMOVE USER" style="width: fit-content; height: fit-content;">
+    </fieldset>
+
+    <table id="myTable" border="2">
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Avatar</th>
+        </tr>
+    </table>
+    <script>
+        let Data = [ {
+            "id": 1,
+            "email": "george.bluth@reqres.in",
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://reqres.in/img/faces/1-image.jpg"
+        },
+        {
+            "id": 2,
+            "email": "janet.weaver@reqres.in",
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://reqres.in/img/faces/2-image.jpg"
+        },
+        {
+            "id": 3,
+            "email": "emma.wong@reqres.in",
+            "first_name": "Emma",
+            "last_name": "Wong",
+            "avatar": "https://reqres.in/img/faces/3-image.jpg"
+        },
+        {
+            "id": 4,
+            "email": "eve.holt@reqres.in",
+            "first_name": "Eve",
+            "last_name": "Holt",
+            "avatar": "https://reqres.in/img/faces/4-image.jpg"
+        },
+        {
+            "id": 5,
+            "email": "charles.morris@reqres.in",
+            "first_name": "Charles",
+            "last_name": "Morris",
+            "avatar": "https://reqres.in/img/faces/5-image.jpg"
+        },
+        {
+            "id": 6,
+            "email": "tracey.ramos@reqres.in",
+            "first_name": "Tracey",
+            "last_name": "Ramos",
+            "avatar": "https://reqres.in/img/faces/6-image.jpg"
+        }];
+        function showUser() {
+            for (let item of Data) {
+                let tableObj = document.getElementById("myTable");
+                let row = tableObj.insertRow(-1);
+                let col1 = row.insertCell(0);
+                let col2 = row.insertCell(1);
+                let col3 = row.insertCell(2);
+                let col4 = row.insertCell(3);
+                let col5 = row.insertCell(4);
+                col1.innerHTML = item.id;
+                col2.innerHTML = item.email;
+                col3.innerHTML = item.first_name;
+                col4.innerHTML = item.last_name;
+                col5.innerHTML = `<img src="${item.avatar}" style="width: 45px; height: 45px; border-radius: 50%;">`;
+            }
+        }
+
+        function removeUser() {
+            let uid = parseInt(document.getElementById("getID").value);
+            let tableObj = document.getElementById("myTable");
+            Data = Data.filter(item => item.id !== uid);
+            while (tableObj.rows.length > 1) {
+                tableObj.deleteRow(1);
+            }
+            for (let item of Data) {
+                let row = tableObj.insertRow(-1);
+                let col1 = row.insertCell(0);
+                let col2 = row.insertCell(1);
+                let col3 = row.insertCell(2);
+                let col4 = row.insertCell(3);
+                let col5 = row.insertCell(4);
+                col1.innerHTML = item.id;
+                col2.innerHTML = item.email;
+                col3.innerHTML = item.first_name;
+                col4.innerHTML = item.last_name;
+                col5.innerHTML = `<img src="${item.avatar}" style="width: 45px; height: 45px; border-radius: 50%;">`;
+            }
+        }
+    </script>
+</body>
+</html>

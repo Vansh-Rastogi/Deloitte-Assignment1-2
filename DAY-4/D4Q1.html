@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Employee Data...</legend>
+        <input type="number" id="eno" placeholder="Enter Employee No">
+        <input type="text" id="ename" placeholder="Enter Employee Name">;
+        <input type="text" id="jb" placeholder="Enter Job Role">
+        <input type="number" id="esal" placeholder="Enter Salary">
+        <input type="button" onclick="addData()" style="width: fit-content; height: fit-content;" value="ADD DATA">
+    </fieldset>
+    <table id="myTable" border="2">
+        <tr>
+            <th>Employee No.</th>
+            <th>Employee Name</th>
+            <th>Job Role</th>
+            <th>Salary</th>
+        </tr>
+    </table>
+
+    <script>
+        function addData() {
+            let empno = document.getElementById("eno").value;
+            let enm = document.getElementById("ename").value;
+            let job = document.getElementById("jb").value;
+            let sal = document.getElementById("esal").value;
+            createTable(empno, enm, job, sal);
+        }
+
+        function createTable(empno, enm, job, sal) {
+            let tableObj = document.getElementById("myTable");
+            let row = tableObj.insertRow(-1);
+            let col1 = row.insertCell(0);
+            let col2 = row.insertCell(1);
+            let col3 = row.insertCell(2);
+            let col4 = row.insertCell(3);
+            col1.innerHTML = empno;
+            col2.innerHTML = enm;
+            col3.innerHTML = job;
+            col4.innerHTML = sal;
+        }
+    </script>
+</body>
+</html>
