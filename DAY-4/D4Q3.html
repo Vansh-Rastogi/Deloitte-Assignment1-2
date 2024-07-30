@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Country Details...</legend>
+        <select id="country">
+            <option value="All countries" selected>All countries</option>
+            <option value="Germany">Germany</option>
+            <option value="Mexico">Mexico</option>
+            <option value="UK">UK</option>
+            <option value="Sweden">Sweden</option>
+            <option value="France">France</option>
+            <option value="Spain">Spain</option>
+            <option value="Canada">Canada</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Brazil">Brazil</option>
+        </select> <br>
+        <button onclick="getData()" style="width: fit-content; height: fit-content;">SHOW DATA</button>
+    </fieldset>
+    <table id="myTable" border="2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody id="myTableBody">
+        </tbody>
+    </table>
+    <script>
+        function getData() {
+            const info = [
+                { "Name": "Alfreds Futterkiste", "City": "Berlin", "Country": "Germany" },
+                { "Name": "Ana Trujillo Emparedados y helados", "City": "México D.F.", "Country": "Mexico" },
+                { "Name": "Antonio Moreno Taquería", "City": "México D.F.", "Country": "Mexico" },
+                { "Name": "Around the Horn", "City": "London", "Country": "UK" },
+                { "Name": "B's Beverages", "City": "London", "Country": "UK" },
+                { "Name": "Berglunds snabbköp", "City": "Luleå", "Country": "Sweden" },
+                { "Name": "Blauer See Delikatessen", "City": "Mannheim", "Country": "Germany" },
+                { "Name": "Blondel père et fils", "City": "Strasbourg", "Country": "France" },
+                { "Name": "Bólido Comidas preparadas", "City": "Madrid", "Country": "Spain" },
+                { "Name": "Bon app'", "City": "Marseille", "Country": "France" },
+                { "Name": "Bottom-Dollar Marketse", "City": "Tsawassen", "Country": "Canada" },
+                { "Name": "Cactus Comidas para llevar", "City": "Buenos Aires", "Country": "Argentina" },
+                { "Name": "Centro comercial Moctezuma", "City": "México D.F.", "Country": "Mexico" },
+                { "Name": "Chop-suey Chinese", "City": "Bern", "Country": "Switzerland" },
+                { "Name": "Comércio Mineiro", "City": "São Paulo", "Country": "Brazil" }
+            ];
+            let country = document.getElementById("country").value;
+            let tableObj = document.getElementById("myTable");
+            let tableBodyObj = document.getElementById("myTableBody");
+            tableBodyObj.innerHTML = '';
+            let filteredCustomers = (country === "All countries") ? info : info.filter(customer => customer.Country === country);
+
+            filteredCustomers.forEach(customer => {
+                let row = tableObj.insertRow(-1);
+                Object.values(customer).forEach((text, index) => {
+                    let cell = row.insertCell(index);
+                    cell.innerHTML = text;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
