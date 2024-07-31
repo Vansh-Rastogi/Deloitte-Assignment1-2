@@ -1,0 +1,22 @@
+<html>
+<head></head>
+<body>
+    <br /><br />
+    <img src="1.jpg" id="bigImg" border="2" width="620" height="420" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            let imgArray = ["Image1.jpg", "Image2.jpg"];
+            function img() {
+                let max = imgArray.length;
+                let min = 0;
+                let n = Math.floor(Math.random() * (max - min)) + min;
+                $("#bigImg").attr("src", imgArray[n]);
+            }
+            $(document).ready(function () {
+                setInterval(img, 2000);
+            });
+        })
+    </script>
+</body>
+</html>
