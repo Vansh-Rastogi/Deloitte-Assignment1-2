@@ -25,6 +25,7 @@
                 let total = 0;
                 if (qt < 0) {
                     alert("Quantity is invalid!");
+                    return;
                 }
                 if (qt > 10 && qt <= 20) {
                     total = ((qt * upr) - ((qt * upr * 10) / 100));
