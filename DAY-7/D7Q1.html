@@ -1,0 +1,89 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h3> jQuery Programming - DOM Traversing</h3>
+    <hr />
+
+
+    <table id="table1" border="2" width="500px">
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+        </tr>
+        <tr>
+            <td><a href="#" id="sa">Select</a></td>
+            <td><a href="#" id="ra">Remove</a></td>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td><a href="#" id="sa">Select</a></td>
+            <td><a href="#" id="ra">Remove</a></td>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td><a href="#" id="sa">Select</a></td>
+            <td><a href="#" id="ra">Remove</a></td>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td><a href="#" id="sa">Select</a></td>
+            <td><a href="#" id="ra">Remove</a></td>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td><a href="#" id="sa">Select</a></td>
+            <td><a href="#" id="ra">Remove</a></td>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td><a href="#" id="sa">Select</a></td>
+            <td><a href="#" id="ra">Remove</a></td>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+
+
+            $("#table1  #sa").click(function () {
+
+                $("#table1 tr").css("background-color", "white");
+                $(this).parent().parent().css("background-color", "pink");
+            });
+
+            $("#table1 #ra").click(function () {
+                $(this).parent().parent().remove();
+            })
+
+        });
+
+    </script>
+
+</body>
+
+</html>
