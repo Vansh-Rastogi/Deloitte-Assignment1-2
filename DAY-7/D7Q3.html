@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="eno" placeholder="Enter Employee No">
+    <input type="text" id="ename" placeholder="Enter Employee Name">
+    <select name="jobrole" id="jb">Select Job Role
+        <option>Analyst</option>
+        <option>Consultant</option>
+        <option>Senior Analyst</option>
+        <option>Analyst Trainee</option>
+        <option>Director</option>
+    </select>
+    <input type="text" id="sal" placeholder="Enter Salary">
+    <input type="text" id="dno" placeholder="Enter Department No"> <br>
+    <button id="add">ADD EMPLOYEE</button>
+    <table id="myTable" border="2" width="700px">
+        <tr>
+            <th></th>
+            <th>Employee No</th>
+            <th>Employee Name</th>
+            <th>Job</th>
+            <th>Salary</th>
+            <th>Department No</th>
+        </tr>
+        <tr>
+            <th><a href="#">Select</a></th>
+            <td>37826</td>
+            <td>John</td>
+            <td>Consultant</td>
+            <td>120000</td>
+            <td>AD-31</td>
+        </tr>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myTable").on("click", "a", function() {
+                $("#myTable tr").css("background-color", "white");
+                $(this).parent().parent().css("background-color", "pink");
+
+                $("#eno").val($(this).parent().siblings().eq(0).text());
+                $("#ename").val($(this).parent().siblings().eq(1).text());
+                $("#jb").val($(this).parent().siblings().eq(2).text());
+                $("#sal").val($(this).parent().siblings().eq(3).text());
+                $("#dno").val($(this).parent().siblings().eq(4).text());
+            });
+            $("#add").click(function () {
+                let empno = $("#eno").val();
+                let empname = $("#ename").val();
+                let job = $("#jb").val();
+                let pay = $("#sal").val();
+                let deptno = $("#dno").val();
+                let str = `<tr>
+                               <td><a href="#">Select</a></td>
+                               <td>${empno}</td>
+                               <td>${empname}</td>
+                               <td>${job}</td>
+                               <td>${pay}</td>
+                               <td>${deptno}</td>
+                           </tr>`;
+                $("#myTable tr:last").before(str);
+                $("input:text").val("");
+            })
+        })
+    </script>
+</body>
+
+</html>
