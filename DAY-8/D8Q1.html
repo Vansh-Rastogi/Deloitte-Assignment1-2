@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Applying Styles to Paragrapgh</h1>
+    <button id="btn1">BOLD</button>
+    <button id="btn2">UNDERLINE</button>
+    <button id="btn3">ITALIC</button>
+    <br>
+    <br>
+    <div id="div1">
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tempore quo expedita architecto nam, vero, distinctio laudantium, ab molestiae aliquam dolorum consectetur? Iure fuga voluptas, consequuntur animi laborum non odit veniam nam in. Incidunt dolores dolorum veniam, natus laboriosam odit! Delectus architecto nulla ducimus animi, dolor natus et quod impedit!</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready( function() {
+            $("#div1").css({"width":"500px","border":"3px solid blue"});
+            $("#btn1").click( function() {
+                $("#para").css("font-weight","bold");
+            })
+            $("#btn2").click( function() {
+                $("#para").css("text-decoration","underline");
+            })
+            $("#btn3").click( function() {
+                $("#para").css("font-style","italic");
+            })
+        })
+    </script>
+</body>
+</html>
